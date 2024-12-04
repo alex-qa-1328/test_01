@@ -49,7 +49,7 @@ def add_users():
 # Он содержит определенные инструкции, написанные на языке Python.
 
 # DRY
-from module_10 import show_time     # Импортируем функцию показать время из 10 модуля
+# from module_10 import show_time     # Импортируем функцию показать время из 10 модуля
 # from module_10 import *
 
 now = "Текущее время:"
@@ -70,13 +70,12 @@ def check_postive(number):
 
 def divide(x, y):
     return x / y
-    # print(x / y)
 
 # print(int(divide(12, 3)))
 # divide(12, 3)
 
 
-# Работа с исключениями. Конструкция Try&Except
+# TODO: Работа с исключениями. Конструкция Try&Except
 # Используется для обработки ошибок (исключений) при выполнении программного кода
 # Если в блоке try возникает ошибка, тогда программа не "падает", а перейдет в блок except где можно дать подсказку
 # в чем проблема и как ее решить
@@ -92,12 +91,16 @@ def download_data(url):
     except Exception as err:
         print(f"Неизвестная ошибка: {err}")
 
+    # response = requests.get(url)
+    # return response.text
+
+
 my_url = "https://urban-university.ru/members/courses/course825686491042/20241122-0000lekcia-rabota-s-iskluceniami-konstrukcia-tryampexcept-830427872941"
 fake_url = 123125
-# print(download_data(fake_url))
+# print(download_data(my_url))
 
 
-# Создание и наследование классов
+# TODO: Создание и наследование классов
 # Класс — это шаблон для создания объектов. Он определяет, какие атрибуты (данные) и методы (функции) будут у
 # создаваемых объектов. В нашем случае мы создадим класс для работы с алфавитами различных языков.
 
@@ -109,14 +112,16 @@ class Car:  # объявляем класс Машины
         self.color = color
         self.name = name
 
-    # def car_description(self):      # пишем дополнительную функцию, которая нам возвращает текстовую информацию о машинах
-    #     car_info = f"Авто:{self.name}\nГод выпуска: {self.year}\nМодель: {self.model}\n{self.color}"
-    #     return car_info
+    def car_description(self):      # пишем дополнительную функцию, которая нам возвращает текстовую информацию о машинах
+        car_info = f"Авто:{self.name}\nГод выпуска: {self.year}\nМодель: {self.model}\n{self.color}"
+        return car_info
 
 uaz = Car("УАЗ", 2010, "Патриот", "Черный")        # создаем экземпляр класса Машины, указываем конкретно год выпуска и модель
 bmw = Car("BMW", 2020, "E3", "Синий")
+ferrari = Car("Ferrari", 2020, "MV220", "Красный")
 
-# print(uaz.car_description())      # выводим на печать данные об автомобиле (экземпляр класса) с использованием доп функции
-# print(bmw.car_description())
+print(uaz.car_description())      # выводим на печать данные об автомобиле (экземпляр класса) с использованием доп функции
+print(bmw.car_description())
+print(ferrari.car_description())
 # print(f"Год выпуска: {uaz.year}\nМодель: {uaz.model}")  # Как бы выглядел вывод на печать без функции car_description
 
